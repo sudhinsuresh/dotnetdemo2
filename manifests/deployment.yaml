@@ -4,7 +4,8 @@ metadata:
   name: dotnet-course
   labels:
     app: dotnet-course
-  namespace: demo-aks-course
+    kubernetes.azure.com/generator: devhub
+  namespace: demo-ask-course
 spec:
   replicas: 1
   selector:
@@ -17,6 +18,7 @@ spec:
     spec:
       containers:
         - name: dotnet-course
-          image: cdacn.azurecr.io/demo-1709362170553:latest
+          image: sudhinazurecicd.azurecr.io/demo-dotnet-1728966115866:latest
+          imagePullPolicy: Always
           ports:
             - containerPort: 5000
